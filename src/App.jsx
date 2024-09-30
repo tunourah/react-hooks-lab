@@ -55,7 +55,7 @@ function App() {
     >
       Change to {isDarkMode ? 'Light' : 'Dark'} Mode
     </button>
-  <div className='flex '>
+  <div className='flex flex-col  sm:flex-row'>
     <div className={`flex flex-col items-center justify-center min-h-screen ${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} w-full`}>
       <h1 className={`text-3xl font-bold mb-4 ${isDarkMode ? 'text-white' : 'text-black'}`}>Calculator</h1>
       <h2 className={`text-xl mb-4 ${isDarkMode ? 'text-gray-300' : 'text-black'}`}>Result: {result}</h2>
