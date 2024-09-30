@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import './App.css'; // You can keep this for any additional custom styles if needed.
+import './App.css';
 
 function App() {
-  const  num1 =10 
-  const  num2 =3;
+  const [num1, setNum1] = useState(0);
+  const [num2, setNum2] = useState(0);
   const [result, setResult] = useState(0);
 
   const handleCalculation = (operation) => {
@@ -36,6 +36,38 @@ function App() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-3xl font-bold mb-4">Calculator</h1>
       <h2 className="text-xl mb-4">Result: {result}</h2>
+      <div className="flex flex-col space-y-2 mb-4">
+        <div className="flex space-x-2 items-center">
+          <span className="text-lg">Num1: {num1}</span>
+          <button 
+            onClick={() => setNum1(num1 + 1)}
+            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+          >
+             +
+          </button>
+          <button 
+            onClick={() => setNum1(num1 - 1)}
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          >
+          -
+          </button>
+        </div>
+        <div className="flex space-x-2 items-center">
+          <span className="text-lg">Num2: {num2}</span>
+          <button 
+            onClick={() => setNum2(num2 + 1)}
+            className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+          >
+           +
+          </button>
+          <button 
+            onClick={() => setNum2(num2 - 1)}
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+          >
+          -
+          </button>
+        </div>
+      </div>
       <div className="flex space-x-2">
         <button
           onClick={() => handleCalculation('+')}
